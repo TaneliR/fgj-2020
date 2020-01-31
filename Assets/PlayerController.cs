@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 500f;
+    public float moveSpeed = 10f;
+    public float rotationSpeed = 50f;
     public Rigidbody2D rb;
     public Rigidbody2D rightTela;
     public Rigidbody2D leftTela;
 
-    float movementRight;
-    float movementLeft;
+    float rotate;
+    float move;
     // Update is called once per frame
     void Update()
     {
-        movementRight = Input.GetAxisRaw("Horizontal");
-        movementLeft = Input.GetAxisRaw("Vertical");
+        rotate = Input.GetAxisRaw("Horizontal");
+        move = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate() {
-        rightTela.AddForce(transform.up * movementRight * moveSpeed * Time.fixedDeltaTime);
-        leftTela.AddForce(transform.up * movementLeft * moveSpeed * Time.fixedDeltaTime);
+            rb.velocity = move * transform.up * moveSpeed * Time.fixedDeltaTime;
+            transform.Rotate(new Vector3(0,0,-rotate * rotationSpeed * Time.fixedDeltaTime));
+
+        if (Input.GetKeyDown("a") && Input.GetKeyDown("d"))
+        {
+        }
+        else if (Input.GetKeyDown("a") || Input.GetKeyDown("d"))
+        {
+        }
+        // rightTela.AddForce(transform.up * movementRight * moveSpeed * Time.fixedDeltaTime);
+        // leftTela.AddForce(transform.up * movementLeft * moveSpeed * Time.fixedDeltaTime);
     }
 }

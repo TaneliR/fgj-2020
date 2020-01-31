@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7110531712561745835}
   - component: {fileID: 3331736010870141169}
-  - component: {fileID: 7646971726499758970}
   m_Layer: 0
   m_Name: LeftTela
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4613574316554716197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.06, y: 0.005, z: 0}
-  m_LocalScale: {x: 0.2, y: 2, z: 1}
+  m_LocalScale: {x: 0.4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 5458240626556431401}
   m_RootOrder: 1
@@ -81,27 +80,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &7646971726499758970
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4613574316554716197}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &5458240626556431397
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,9 +92,7 @@ GameObject:
   - component: {fileID: 5458240626556431398}
   - component: {fileID: 5458240626556431399}
   - component: {fileID: 5458240626556431396}
-  - component: {fileID: 7897072781100930108}
-  - component: {fileID: 2002768170}
-  - component: {fileID: 2002768171}
+  - component: {fileID: -3400592159148486675}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -209,7 +185,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &5458240626556431396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,10 +200,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rb: {fileID: 5458240626556431399}
-  rightTela: {fileID: 8162519145252556120}
-  leftTela: {fileID: 7646971726499758970}
---- !u!58 &7897072781100930108
-CircleCollider2D:
+  rightTela: {fileID: 0}
+  leftTela: {fileID: 0}
+--- !u!70 &-3400592159148486675
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -240,44 +216,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
---- !u!256 &2002768170
-FrictionJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5458240626556431397}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 7646971726499758970}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.29999998, y: -0.0025000037}
-  m_MaxForce: 1
-  m_MaxTorque: 1
---- !u!256 &2002768171
-FrictionJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5458240626556431397}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8162519145252556120}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.29999998, y: -0.0025000037}
-  m_MaxForce: 1
-  m_MaxTorque: 1
+  m_Size: {x: 0.05, y: 0.2}
+  m_Direction: 0
 --- !u!1 &8390845875496372328
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +228,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7222312908924628303}
   - component: {fileID: 2815123716012578968}
-  - component: {fileID: 8162519145252556120}
   m_Layer: 0
   m_Name: RightTela
   m_TagString: Untagged
@@ -305,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 8390845875496372328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06, y: 0.005, z: 0}
-  m_LocalScale: {x: 0.2, y: 2, z: 1}
+  m_LocalScale: {x: 0.4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 5458240626556431401}
   m_RootOrder: 0
@@ -359,24 +298,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8162519145252556120
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390845875496372328}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
