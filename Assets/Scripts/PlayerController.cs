@@ -32,4 +32,11 @@ public class PlayerController : MonoBehaviour
         // rightTela.AddForce(transform.up * movementRight * moveSpeed * Time.fixedDeltaTime);
         // leftTela.AddForce(transform.up * movementLeft * moveSpeed * Time.fixedDeltaTime);
     }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+        if (col.gameObject.tag == "scrap") {
+             Destroy (col.gameObject);
+        }
+    }
 }
