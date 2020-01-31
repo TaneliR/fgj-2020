@@ -1,8 +1,6 @@
 # Finnish Game Jam 2020
 
-Tehdääm maailmam paras peli :-)
-
-**Paavo:** "Ok."
+Olet hajoamalisillasi oleva robotti. Sinun tarvitsee kerätä varaosia korjausta varten, ja väistellä vastustajia. Kun varaosat riittävät, täytyy sinun päästä korjautukseen Markolle. Kun pääset Markolle, voitat pelin.
 
 ## Tiivistelmä
 
@@ -11,6 +9,10 @@ Tehdääm maailmam paras peli :-)
 - Kun scrabit riittää, etsi Marko
 - Marko korjaa ja peli on voitettu
 
-## Tarina
+## Tiimi
 
-Olet hajoamalisillasi oleva robotti. Sinun tarvitsee kerätä varaosia korjausta varten, ja väistellä vastustajia. Kun varaosat riittävät, täytyy sinun päästä korjautukseen Markolle. Kun pääset Markolle, voitat pelin.
+- Taneli koodaa
+- Arttu koodaa
+- Anssi musisoi
+- Juho taiteilaa
+- Paavo taiteilee
