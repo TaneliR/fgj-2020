@@ -23,6 +23,14 @@ public class Patrol : MonoBehaviour
 	public Vector3 directionOfTravel;
 
 	private Animator anim;
+	
+	IEnumerator ChaseTime(float time)
+	{
+		yield return new WaitForSeconds(time);
+
+		Pause();
+		isChasing = false;
+	}
 
 	/**
 	 * Initialisation
@@ -186,5 +194,6 @@ public class Patrol : MonoBehaviour
 				Space.World
 			);
 		}
+		StartCoroutine(ChaseTime(5));
 	}
 }
