@@ -7,12 +7,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
     public float rotationSpeed = 50f;
     public Rigidbody2D rb;
-    public Rigidbody2D rightTela;
-    public Rigidbody2D leftTela;
     public GameControl gameControl;
     public float oilAmount = 100f;
-    float rotate;
-    float move;
     private Animator anim;
     void Awake() {
         anim = GetComponent<Animator>();
@@ -51,8 +47,11 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("OnCollisionEnter2D");
         if (col.gameObject.tag == "scrap") {
-             Destroy (col.gameObject);
-             gameControl.IncreaseScore(1);
+            Destroy (col.gameObject);
+            gameControl.IncreaseScore(1);
+        }
+        else if (col.gameObject.tag == "marko"){
+            Loader.Load(Loader.Scene.WinScene);
         }
     }
 }
