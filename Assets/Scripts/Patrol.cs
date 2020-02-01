@@ -5,35 +5,48 @@ public class Patrol : MonoBehaviour
 {
 	public Waypoint[] wayPoints;
 	public float speed = 3f;
+
 	public bool isCircular;
+
 	// Always true at the beginning because the moving object will always move towards the first waypoint
 	public bool inReverse = true;
 	public bool isChasing = false;
 
 
 	private Waypoint currentWaypoint;
-	private int currentIndex   = 0;
-	private bool isWaiting     = false;
+	private int currentIndex = 0;
+	private bool isWaiting = false;
 	private float speedStorage = 0;
 	public Vector3 currentPosition;
 	public Vector3 targetPosition;
 	public Vector3 vectorToTarget;
-	
+	public Vector3 directionOfTravel;
+
 	private Animator anim;
+	
+	IEnumerator ChaseTime(float time)
+	{
+		yield return new WaitForSeconds(time);
+
+		Pause();
+		isChasing = false;
+	}
 
 	/**
 	 * Initialisation
 	 * 
 	 */
-	void Start () {
+	void Start()
+	{
 		anim = GetComponent<Animator>();
 		anim.SetBool("isMoving", true);
-		if(wayPoints.Length > 0) {
+		if (wayPoints.Length > 0)
+		{
 			currentWaypoint = wayPoints[0];
 		}
 	}
-	
-	
+
+
 
 	/**
 	 * Update is called once per frame
@@ -41,7 +54,8 @@ public class Patrol : MonoBehaviour
 	 */
 	void Update()
 	{
-		if(currentWaypoint != null && !isWaiting && !isChasing) {
+		if (currentWaypoint != null && !isWaiting && !isChasing)
+		{
 			MoveTowardsWaypoint();
 		}
 		else if (isChasing)
@@ -49,8 +63,6 @@ public class Patrol : MonoBehaviour
 			PlayerDetection();
 		}
 	}
-
-
 
 	/**
 	 * Pause the mover
@@ -62,7 +74,7 @@ public class Patrol : MonoBehaviour
 	}
 
 
-	
+
 	/**
 	 * Move the object towards the selected waypoint
 	 * 
@@ -73,18 +85,19 @@ public class Patrol : MonoBehaviour
 		currentPosition = this.transform.position;
 		// Get the target waypoints position
 		targetPosition = currentWaypoint.transform.position;
-		
+
 		vectorToTarget = targetPosition - currentPosition;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * 1000f);
 		// If the moving object isn't that close to the waypoint
-		if(Vector3.Distance(currentPosition, targetPosition) > .1f) {
+		if (Vector3.Distance(currentPosition, targetPosition) > .1f)
+		{
 
 			// Get the direction and normalize
-			Vector3 directionOfTravel = targetPosition - currentPosition;
+			directionOfTravel = targetPosition - currentPosition;
 			directionOfTravel.Normalize();
-			
+
 			//scale the movement on each axis by the directionOfTravel vector components
 			this.transform.Translate(
 				directionOfTravel.x * speed * Time.deltaTime,
@@ -92,26 +105,32 @@ public class Patrol : MonoBehaviour
 				directionOfTravel.z * speed * Time.deltaTime,
 				Space.World
 			);
-		} else {
-			
+		}
+		else
+		{
+
 			// If the waypoint has a pause amount then wait a bit
-			if(currentWaypoint.waitSeconds > 0) {
+			if (currentWaypoint.waitSeconds > 0)
+			{
 				Pause();
 				Invoke("Pause", currentWaypoint.waitSeconds);
 			}
 
 			// If the current waypoint has a speed change then change to it
-			if(currentWaypoint.speedOut > 0) {
+			if (currentWaypoint.speedOut > 0)
+			{
 				speedStorage = speed;
 				speed = currentWaypoint.speedOut;
-			} else if(speedStorage != 0) {
+			}
+			else if (speedStorage != 0)
+			{
 				speed = speedStorage;
 				speedStorage = 0;
 			}
 
 			NextWaypoint();
 		}
-		
+
 	}
 
 
@@ -122,21 +141,29 @@ public class Patrol : MonoBehaviour
 	 */
 	private void NextWaypoint()
 	{
-		if(isCircular) {
-			
-			if(!inReverse) {
-				currentIndex = (currentIndex+1 >= wayPoints.Length) ? 0 : currentIndex+1;
-			} else {
-				currentIndex = (currentIndex == 0) ? wayPoints.Length-1 : currentIndex-1;
+		if (isCircular)
+		{
+
+			if (!inReverse)
+			{
+				currentIndex = (currentIndex + 1 >= wayPoints.Length) ? 0 : currentIndex + 1;
+			}
+			else
+			{
+				currentIndex = (currentIndex == 0) ? wayPoints.Length - 1 : currentIndex - 1;
 			}
 
-		} else {
-			
+		}
+		else
+		{
+
 			// If at the start or the end then reverse
-			if((!inReverse && currentIndex+1 >= wayPoints.Length) || (inReverse && currentIndex == 0)) {
+			if ((!inReverse && currentIndex + 1 >= wayPoints.Length) || (inReverse && currentIndex == 0))
+			{
 				inReverse = !inReverse;
 			}
-			currentIndex = (!inReverse) ? currentIndex+1 : currentIndex-1;
+
+			currentIndex = (!inReverse) ? currentIndex + 1 : currentIndex - 1;
 
 		}
 
@@ -151,6 +178,22 @@ public class Patrol : MonoBehaviour
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * 1000f);
+		speed = 1f;
+		if (Vector3.Distance(currentPosition, targetPosition) > .1f)
+		{
 
+			// Get the direction and normalize
+			directionOfTravel = targetPosition - currentPosition;
+			directionOfTravel.Normalize();
+
+			//scale the movement on each axis by the directionOfTravel vector components
+			this.transform.Translate(
+				directionOfTravel.x * speed * Time.deltaTime,
+				directionOfTravel.y * speed * Time.deltaTime,
+				directionOfTravel.z * speed * Time.deltaTime,
+				Space.World
+			);
+		}
+		StartCoroutine(ChaseTime(5));
 	}
 }

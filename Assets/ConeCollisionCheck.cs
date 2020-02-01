@@ -13,9 +13,6 @@ public class ConeCollisionCheck : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Turpaan!");
-            
-            
             patrol = transform.parent.gameObject.GetComponent<Patrol>();
 
             patrol.Pause();
