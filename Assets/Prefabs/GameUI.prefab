@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8453062997279742717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8453062997885378095}
   - component: {fileID: 8453062997885378094}
   m_Layer: 5
-  m_Name: GameUI 1
+  m_Name: GameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +245,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20, y: -20}
-  m_SizeDelta: {x: 319.58, y: 85.81}
+  m_SizeDelta: {x: 600, y: 85.81}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8453062998003517309
 CanvasRenderer:
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7c8df1068acc944f18ed60d2648e18f4, type: 3}
     m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
