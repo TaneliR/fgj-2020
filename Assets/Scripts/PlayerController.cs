@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public bool godMode;
 
     public GameControl gameControl;
+    public AudioClip collect;
+    public AudioClip death;
+
     private Animator anim;
     private ParticleSystem particles;
     void Awake() {
@@ -77,13 +80,23 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "scrap") {
             Destroy (col.gameObject);
+            SFXManager.Instance.Play(collect);
             gameControl.IncreaseScore(1);
         }
         else if (col.gameObject.tag == "marko"){
             Loader.Load(Loader.Scene.WinScene);
         }
         else if (col.gameObject.tag == "enemy" && !godMode){
-            Loader.Load(Loader.Scene.LoseScene);
+            SFXManager.Instance.Play(death);
+            DeathAfterWait(0.1f);
+            
         }
+    }
+
+    IEnumerator DeathAfterWait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Loader.Load(Loader.Scene.LoseScene);
+        // Code to execute after the delay
     }
 }
