@@ -88,8 +88,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "enemy" && !godMode){
             SFXManager.Instance.Play(death);
-            DeathAfterWait(0.1f);
-            
+            Debug.Log("Moi");
+            Loader.Load(Loader.Scene.LoseScene);
         }
     }
 
