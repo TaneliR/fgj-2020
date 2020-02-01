@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float rotationSpeed = 50f;
-    public Rigidbody2D rb;
-    public GameControl gameControl;
     public float oilAmount = 100f;
+
+    public GameControl gameControl;
     private Animator anim;
+    
     void Awake() {
         anim = GetComponent<Animator>();
     }
@@ -45,7 +46,6 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("OnCollisionEnter2D");
         if (col.gameObject.tag == "scrap") {
             Destroy (col.gameObject);
             gameControl.IncreaseScore(1);
