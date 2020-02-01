@@ -14,7 +14,7 @@ public class ConeCollisionCheck : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Turpaan!");
-            fov.LineCheck();
+            //fov.LineCheck();
         }
 
     }

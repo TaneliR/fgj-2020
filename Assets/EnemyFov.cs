@@ -20,7 +20,7 @@ public class EnemyFov : MonoBehaviour
         
     }
 
-    public void LineCheck()
+    /*public void LineCheck()
     {
         //RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, GameObject.FindWithTag("Player").transform.position
         //    , distance);
@@ -30,18 +30,12 @@ public class EnemyFov : MonoBehaviour
         //lineOfSight.SetPosition(1, GameObject.FindWithTag("Player").transform.position);
             if (hitInfo.collider.gameObject != null){
                 lineOfSight.SetPosition(1, hitInfo.point);
-                Debug.Log("Argh!");
-
-                if (hitInfo.collider.gameObject.CompareTag("Player")) {
+                if (gameObject.tag == "Player") {
                     Destroy(hitInfo.collider.gameObject);
                 }
-
-            }
+            } 
             
-
-        
-
             lineOfSight.SetPosition(0, transform.position);
-    }
+    }*/
 
 }
