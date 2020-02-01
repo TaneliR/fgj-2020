@@ -11,8 +11,10 @@ public class PlayerController : MonoBehaviour
 
     public GameControl gameControl;
     private Animator anim;
-
+    private ParticleSystem particles;
     void Awake() {
+        particles = GetComponent<ParticleSystem>();
+        particles.Stop();
         anim = GetComponent<Animator>();
     }
     // Update is called once per frame
@@ -28,9 +30,11 @@ public class PlayerController : MonoBehaviour
 
     void Move() {
         anim.SetBool("isMoving", false);
+        particles.Stop();
         // Forward
         if (Input.GetKey("i") && Input.GetKey("o") || Input.GetAxis("Left Stick") <= -0.8f && Input.GetAxis("Right Stick") <= -0.8f){
             anim.SetBool("isMoving", true);
+            particles.Play();
             transform.Translate(moveSpeed * Vector3.up * Time.fixedDeltaTime);
         }
         // Back
@@ -48,11 +52,13 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey("i") || Input.GetAxis("Left Stick") <= -0.8f) {
             anim.SetBool("isMoving", true);
+            particles.Play();
             transform.Translate(moveSpeed * Vector3.up * Time.fixedDeltaTime);
             transform.Rotate(new Vector3(0,0,1 * rotationSpeed * Time.fixedDeltaTime));
         }
         if (Input.GetKey("o") || Input.GetAxis("Right Stick") <= -0.8f) {
             anim.SetBool("isMoving", true);
+            particles.Play();
             transform.Translate(moveSpeed * Vector3.up * Time.fixedDeltaTime);
             transform.Rotate(new Vector3(0,0,-1 * rotationSpeed * Time.fixedDeltaTime));
         }
