@@ -41,9 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Foreground
+  - name: Ground
     uniqueID: 1511829041
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlayerAndItems
+    uniqueID: 2737300931
+    locked: 0
+  - name: Walls
+    uniqueID: 2149408907
     locked: 0
