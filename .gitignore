@@ -57,18 +57,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-/.idea/
-/Assets/Sprites/boundaries/black.png.meta
-/Assets/Sprites/floors/black.png.meta
-/Assets/ConeCollisionCheck.cs.meta
-/Assets/Prefabs/ConeOfSight.png.meta
-/Assets/Sprites/floors/floor-5.png.meta
-/Assets/Sprites/floors/floor-6.png.meta
-/Assets/Sprites/floors/floor-7.png.meta
-/Assets/Prefabs/LineOfSight.prefab.meta
-/Assets/PlayerCollisionCheck.cs.meta
-/Assets/Sprites/boundaries/shelf-1.png.meta
-/Assets/Sprites/boundaries/shelf-2.png.meta
-/Assets/Sprites/boundaries/shelf-3.png.meta
-/Assets/Sprites/boundaries/shelf-4.png.meta
