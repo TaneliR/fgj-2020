@@ -8,6 +8,7 @@ public static class Loader
     public enum Scene {
         GameScene,
         MainMenu,
+        WinScene,
     }
     public static void Load(Scene scene) {
         SceneManager.LoadScene(scene.ToString());
