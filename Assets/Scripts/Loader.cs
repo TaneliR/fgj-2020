@@ -9,6 +9,7 @@ public static class Loader
         GameScene,
         MainMenu,
         WinScene,
+        LoseScene
     }
     public static void Load(Scene scene) {
         SceneManager.LoadScene(scene.ToString());

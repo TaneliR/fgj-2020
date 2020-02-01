@@ -14,13 +14,15 @@ public class Patrol : MonoBehaviour
 	private bool isWaiting     = false;
 	private float speedStorage = 0;
 
-	
+	private Animator anim;
 
 	/**
 	 * Initialisation
 	 * 
 	 */
 	void Start () {
+		anim = GetComponent<Animator>();
+		anim.SetBool("isMoving", true);
 		if(wayPoints.Length > 0) {
 			currentWaypoint = wayPoints[0];
 		}
@@ -60,10 +62,13 @@ public class Patrol : MonoBehaviour
 	{
 		// Get the moving objects current position
 		Vector3 currentPosition = this.transform.position;
-		
 		// Get the target waypoints position
 		Vector3 targetPosition = currentWaypoint.transform.position;
 		
+		Vector3 vectorToTarget = targetPosition - currentPosition;
+		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+		Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * 1000f);
 		// If the moving object isn't that close to the waypoint
 		if(Vector3.Distance(currentPosition, targetPosition) > .1f) {
 
