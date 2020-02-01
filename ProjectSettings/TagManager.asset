@@ -6,6 +6,7 @@ TagManager:
   tags:
   - scrap
   - marko
+  - enemy
   layers:
   - Default
   - TransparentFX

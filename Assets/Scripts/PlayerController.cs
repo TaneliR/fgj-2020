@@ -73,5 +73,8 @@ public class PlayerController : MonoBehaviour
         else if (col.gameObject.tag == "marko"){
             Loader.Load(Loader.Scene.WinScene);
         }
+        else if (col.gameObject.tag == "enemy"){
+            Loader.Load(Loader.Scene.LoseScene);
+        }
     }
 }
