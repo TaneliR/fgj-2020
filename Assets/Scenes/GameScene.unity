@@ -651,6 +651,21 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.14
       objectReference: {fileID: 0}
+    - target: {fileID: 4248835531736566562, guid: 624bbeb4713464d33ac83e1d40c44fe2,
+        type: 3}
+      propertyPath: wayPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248835531736566562, guid: 624bbeb4713464d33ac83e1d40c44fe2,
+        type: 3}
+      propertyPath: wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1895752373}
+    - target: {fileID: 4248835531736566562, guid: 624bbeb4713464d33ac83e1d40c44fe2,
+        type: 3}
+      propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 539678440}
     - target: {fileID: 7467748518396617194, guid: 624bbeb4713464d33ac83e1d40c44fe2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1421,6 +1436,11 @@ PrefabInstance:
       propertyPath: gameControl
       value: 
       objectReference: {fileID: 644884016}
+    - target: {fileID: -372088637916576190, guid: 45210737c31ef445796e479c4158af1c,
+        type: 3}
+      propertyPath: godMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3615111884063243760, guid: 45210737c31ef445796e479c4158af1c,
         type: 3}
       propertyPath: m_Name

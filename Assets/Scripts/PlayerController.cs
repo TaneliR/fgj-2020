@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
     public float rotationSpeed = 50f;
     public float oilAmount = 100f;
+    public bool godMode;
 
     public GameControl gameControl;
     private Animator anim;
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
         else if (col.gameObject.tag == "marko"){
             Loader.Load(Loader.Scene.WinScene);
         }
-        else if (col.gameObject.tag == "enemy"){
+        else if (col.gameObject.tag == "enemy" && !godMode){
             Loader.Load(Loader.Scene.LoseScene);
         }
     }
