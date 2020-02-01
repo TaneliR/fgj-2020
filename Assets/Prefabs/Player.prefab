@@ -115,11 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702052fa7ea5f1d4091a446e263c3780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotationSpeed: 50
-  rb: {fileID: 0}
-  gameControl: {fileID: 0}
+  moveSpeed: 0.3
+  rotationSpeed: 100
   oilAmount: 100
+  gameControl: {fileID: 0}
 --- !u!50 &-8633417522770360908
 Rigidbody2D:
   serializedVersion: 4

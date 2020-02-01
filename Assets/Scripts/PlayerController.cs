@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public GameControl gameControl;
     private Animator anim;
-    
+
     void Awake() {
         anim = GetComponent<Animator>();
     }
@@ -29,11 +29,11 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isMoving", false);
         if (Input.GetKey("i") && Input.GetKey("o")){
             anim.SetBool("isMoving", true);
-            transform.Translate(Vector3.up * Time.fixedDeltaTime);
+            transform.Translate(moveSpeed * Vector3.up * Time.fixedDeltaTime);
         }
         if (Input.GetKey("k") && Input.GetKey("l")){
             anim.SetBool("isMoving", true);
-            transform.Translate(Vector3.down * Time.fixedDeltaTime);
+            transform.Translate(moveSpeed * Vector3.down * Time.fixedDeltaTime);
         }
         if (Input.GetKey("k") && Input.GetKey("o")){
             anim.SetBool("isMoving", true);
@@ -42,6 +42,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("i") && Input.GetKey("l")){
             anim.SetBool("isMoving", true);
             transform.Rotate(new Vector3(0,0,-1 * rotationSpeed * Time.fixedDeltaTime));
+        }
+        if (Input.GetKey("i")) {
+            anim.SetBool("isMoving", true);
+            transform.Translate(moveSpeed * Vector3.up * Time.fixedDeltaTime);
+            transform.Rotate(new Vector3(0,0,1 * rotationSpeed * Time.fixedDeltaTime));
+        }
+        if (Input.GetKey("o")) {
+            anim.SetBool("isMoving", true);
+            transform.Translate(moveSpeed * Vector3.up * Time.fixedDeltaTime);
+            transform.Rotate(new Vector3(0,0,-1 * rotationSpeed * Time.fixedDeltaTime));
+        }
+        if (Input.GetKey("k")) {
+            anim.SetBool("isMoving", true);
+            transform.Translate(moveSpeed * Vector3.down * Time.fixedDeltaTime);
+            transform.Rotate(new Vector3(0,0,-1 * rotationSpeed * Time.fixedDeltaTime));
+        }
+        if (Input.GetKey("l")) {
+            anim.SetBool("isMoving", true);
+            transform.Translate(moveSpeed * Vector3.down * Time.fixedDeltaTime);
+            transform.Rotate(new Vector3(0,0,1 * rotationSpeed * Time.fixedDeltaTime));
         }
     }
     void OnTriggerEnter2D(Collider2D col)
