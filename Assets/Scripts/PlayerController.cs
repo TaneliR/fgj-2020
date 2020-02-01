@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     public float oilAmount = 100f;
     float rotate;
     float move;
+    private Animator anim;
+    void Awake() {
+        anim = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -25,16 +29,21 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move() {
+        anim.SetBool("isMoving", false);
         if (Input.GetKey("i") && Input.GetKey("o")){
+            anim.SetBool("isMoving", true);
             transform.Translate(Vector3.up * Time.fixedDeltaTime);
         }
         if (Input.GetKey("k") && Input.GetKey("l")){
+            anim.SetBool("isMoving", true);
             transform.Translate(Vector3.down * Time.fixedDeltaTime);
         }
         if (Input.GetKey("k") && Input.GetKey("o")){
+            anim.SetBool("isMoving", true);
             transform.Rotate(new Vector3(0,0,1 * rotationSpeed * Time.fixedDeltaTime));
         }
         if (Input.GetKey("i") && Input.GetKey("l")){
+            anim.SetBool("isMoving", true);
             transform.Rotate(new Vector3(0,0,-1 * rotationSpeed * Time.fixedDeltaTime));
         }
     }
