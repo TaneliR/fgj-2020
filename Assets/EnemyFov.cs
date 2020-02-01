@@ -4,39 +4,44 @@ using UnityEngine;
 
 public class EnemyFov : MonoBehaviour
 {
-    public float rotationSpeed;
     public float distance;
-
-    public LineRenderer lineOfSightCenter;
-    public LineRenderer lineOfSightLeft;
-
+    public float rotationSpeed;
+    
+    public LineRenderer lineOfSight;
+    public GameObject coneOfSight;
 
     void Start(){
         Physics2D.queriesStartInColliders = false;
 
     }
     void Update() {
-
+        
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        
+    }
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance);
-        RaycastHit2D hitInfoLeft = Physics2D.Raycast(transform.position, transform.right, distance);
+    public void LineCheck()
+    {
+        //RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, GameObject.FindWithTag("Player").transform.position
+        //    , distance);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, GameObject.FindWithTag("Player").transform.position, distance);
+        lineOfSight.SetPosition(1, GameObject.FindWithTag("Player").transform.position);
 
-        if (hitInfo.collider != null){
-            lineOfSightCenter.SetPosition(1, hitInfo.point);
-            lineOfSightLeft.SetPosition(2, hitInfoLeft.point);
-            
-            if(hitInfo.collider.CompareTag("Player")){
-                Destroy(hitInfo.collider.gameObject);
+        //lineOfSight.SetPosition(1, GameObject.FindWithTag("Player").transform.position);
+            if (hitInfo.collider.gameObject != null){
+                lineOfSight.SetPosition(1, hitInfo.point);
+                Debug.Log("Argh!");
+
+                if (hitInfo.collider.gameObject.CompareTag("Player")) {
+                    Destroy(hitInfo.collider.gameObject);
+                }
+
             }
-        } else {
-            lineOfSightCenter.SetPosition(1, transform.position + transform.right * distance);
-            lineOfSightLeft.SetPosition(2, transform.position + transform.right * distance);
-        }
+            
+
         
 
-        lineOfSightCenter.SetPosition(0, transform.position);
-        lineOfSightLeft.SetPosition(0, transform.position);
-
+            lineOfSight.SetPosition(0, transform.position);
     }
+
 }

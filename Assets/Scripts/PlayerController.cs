@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameControl.SetOilBar(oilAmount);
-        oilAmount -= 0.01f;
+        // gameControl.SetOilBar(oilAmount);
+        // oilAmount -= 0.01f; 
     }
 
     void FixedUpdate() {
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("OnCollisionEnter2D");
+        
         if (col.gameObject.tag == "scrap") {
              Destroy (col.gameObject);
              gameControl.IncreaseScore(1);
