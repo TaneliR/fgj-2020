@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ConeCollisionCheck : MonoBehaviour
 {
-    public EnemyFov fov;
+    public Patrol patrol;
 
     public LineRenderer lineOfSight;
     
@@ -14,7 +14,12 @@ public class ConeCollisionCheck : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Turpaan!");
-            //fov.LineCheck();
+            
+            
+            patrol = transform.parent.gameObject.GetComponent<Patrol>();
+
+            patrol.Pause();
+            patrol.isChasing = true;
         }
 
     }

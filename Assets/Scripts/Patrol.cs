@@ -8,12 +8,17 @@ public class Patrol : MonoBehaviour
 	public bool isCircular;
 	// Always true at the beginning because the moving object will always move towards the first waypoint
 	public bool inReverse = true;
+	public bool isChasing = false;
+
 
 	private Waypoint currentWaypoint;
 	private int currentIndex   = 0;
 	private bool isWaiting     = false;
 	private float speedStorage = 0;
-
+	public Vector3 currentPosition;
+	public Vector3 targetPosition;
+	public Vector3 vectorToTarget;
+	
 	private Animator anim;
 
 	/**
@@ -36,8 +41,12 @@ public class Patrol : MonoBehaviour
 	 */
 	void Update()
 	{
-		if(currentWaypoint != null && !isWaiting) {
+		if(currentWaypoint != null && !isWaiting && !isChasing) {
 			MoveTowardsWaypoint();
+		}
+		else if (isChasing)
+		{
+			PlayerDetection();
 		}
 	}
 
@@ -47,7 +56,7 @@ public class Patrol : MonoBehaviour
 	 * Pause the mover
 	 * 
 	 */
-	void Pause()
+	public void Pause()
 	{
 		isWaiting = !isWaiting;
 	}
@@ -58,14 +67,14 @@ public class Patrol : MonoBehaviour
 	 * Move the object towards the selected waypoint
 	 * 
 	 */
-	private void MoveTowardsWaypoint()
+	public void MoveTowardsWaypoint()
 	{
 		// Get the moving objects current position
-		Vector3 currentPosition = this.transform.position;
+		currentPosition = this.transform.position;
 		// Get the target waypoints position
-		Vector3 targetPosition = currentWaypoint.transform.position;
+		targetPosition = currentWaypoint.transform.position;
 		
-		Vector3 vectorToTarget = targetPosition - currentPosition;
+		vectorToTarget = targetPosition - currentPosition;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * 1000f);
@@ -102,6 +111,7 @@ public class Patrol : MonoBehaviour
 
 			NextWaypoint();
 		}
+		
 	}
 
 
@@ -131,5 +141,16 @@ public class Patrol : MonoBehaviour
 		}
 
 		currentWaypoint = wayPoints[currentIndex];
+	}
+
+	public void PlayerDetection()
+	{
+		currentPosition = this.transform.position;
+		targetPosition = GameObject.FindWithTag("Player").transform.position;
+		vectorToTarget = targetPosition - currentPosition;
+		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+		Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * 1000f);
+
 	}
 }
