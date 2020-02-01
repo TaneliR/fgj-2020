@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("LEFT STICK " + Input.GetAxis("Left Stick"));
-        Debug.Log("RIGHT STICK " + Input.GetAxis("Right Stick"));
         gameControl.SetOilBar(oilAmount);
         oilAmount -= 0.01f;
     }

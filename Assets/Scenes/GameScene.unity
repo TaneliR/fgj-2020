@@ -1221,6 +1221,76 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie1
       objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365348100898059166, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7632451036689234470, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 445e5d7709024494dbe62c9a8924e28c, type: 2}
+    - target: {fileID: 7632451036689234470, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
 --- !u!1001 &1456902688
@@ -1880,6 +1950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786270840879226907, guid: 0d6703f42643c3d409335be596e6cf6e,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6703f42643c3d409335be596e6cf6e, type: 3}
