@@ -12,6 +12,6 @@ public class WinScreenUI : MonoBehaviour
 
     void StartGameClick() {    
         Debug.Log("Click on start game");
-        Loader.Load(Loader.Scene.GameScene);
+        Loader.Load(Loader.Scene.PlayScene);
     }
 }
