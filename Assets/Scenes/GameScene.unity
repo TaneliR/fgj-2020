@@ -894,7 +894,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1078,6 +1078,7 @@ MonoBehaviour:
   speed: 0.2
   isCircular: 0
   inReverse: 1
+  isChasing: 0
 --- !u!1 &1391918843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1152,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1905035093, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905035093, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
+      propertyPath: isChasing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 969026000873491749, guid: f51a6f98f459c4010b8fd463be6477ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1446,6 +1455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3615111884063243760, guid: 45210737c31ef445796e479c4158af1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3615111884063243773, guid: 45210737c31ef445796e479c4158af1c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1546,6 +1560,7 @@ MonoBehaviour:
   speed: 0.5
   isCircular: 0
   inReverse: 0
+  isChasing: 1
 --- !u!1001 &1934603750
 PrefabInstance:
   m_ObjectHideFlags: 0
