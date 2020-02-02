@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool godMode;
 
     public GameControl gameControl;
+    public GameObject scrap;
     public AudioClip collect;
     public AudioClip death;
 
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
             Loader.Load(Loader.Scene.WinScene);
         }
         else if (col.gameObject.tag == "enemy" && !godMode){
+            StartCoroutine(TakeHit(1));
             SFXManager.Instance.Play(death);
             StartCoroutine(DeathAfterWait(2f));
         }
@@ -96,5 +98,17 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Loader.Load(Loader.Scene.LoseScene);
+    }
+    
+    IEnumerator TakeHit(int amount)
+    {
+        if (gameControl.score - amount <= 0) {
+            Debug.Log("Death");
+        }
+        else 
+        for (var i = amount; i > 0; i--) {
+            Instantiate(scrap, transform.position + new Vector3(Random.Range(0,1),  Random.Range(0,1), 0), Quaternion.identity);
+        }
+        yield return new WaitForSeconds(2f);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
-    private int score = 0;
+    public int score = 0;
     public Text scoreText;
     public Image oilBar;
     public OpenDoor firstDoors;
