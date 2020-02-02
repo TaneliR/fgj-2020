@@ -10,6 +10,11 @@ public class MainMenuUI : MonoBehaviour
         startButton.GetComponent<Button>().onClick.AddListener(StartGameClick);
     }
 
+    void Update() {
+        if (Input.GetButton("Submit")) {
+            StartGameClick();
+        }
+    }
     void StartGameClick() {    
         Debug.Log("Click on start game");
         Loader.Load(Loader.Scene.PlayScene);
