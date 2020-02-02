@@ -10,7 +10,8 @@ public static class Loader
         MainMenu,
         PlayScene,
         WinScene,
-        LoseScene
+        LoseScene,
+        Briefing,
     }
     public static void Load(Scene scene) {
         SceneManager.LoadScene(scene.ToString());

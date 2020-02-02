@@ -168,7 +168,7 @@ Animator:
   m_GameObject: {fileID: 173554490}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3316753395333964e9d0a2b1071be250, type: 2}
+  m_Controller: {fileID: 9100000, guid: 50be966d488e5a14a8dbe4d078449bc0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 653741deaa6b44799853b4c9dfff5a41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c89da29210cce1429252a806b16646d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1941769917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d95561583aca934099f50ae77eefb19, type: 3}
+  m_Script: {fileID: 11500000, guid: e7286f64ff9155345b97d5f9d444b89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 880543518}
@@ -866,7 +866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Game
+  m_Text: Start Game
 --- !u!222 &1944981616
 CanvasRenderer:
   m_ObjectHideFlags: 0
