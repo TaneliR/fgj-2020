@@ -151,7 +151,7 @@ RectTransform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 583122657}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -303,9 +303,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1748436481}
   - {fileID: 173554491}
   - {fileID: 880543517}
-  - {fileID: 1748436481}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -346,11 +346,11 @@ RectTransform:
   m_Children:
   - {fileID: 1944981614}
   m_Father: {fileID: 583122657}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 257, y: -41}
+  m_AnchoredPosition: {x: 299.4, y: -212}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880543518
@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 1748436483}
   - component: {fileID: 1748436482}
   m_Layer: 5
-  m_Name: Text
+  m_Name: BriefingLore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,12 +698,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 583122657}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 253, y: 61}
-  m_SizeDelta: {x: 400, y: 140}
+  m_AnchoredPosition: {x: 287.7, y: 14.6}
+  m_SizeDelta: {x: 516.3, y: 423.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748436482
 MonoBehaviour:
@@ -725,10 +725,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7c8df1068acc944f18ed60d2648e18f4, type: 3}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -736,16 +736,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '------How To Play------
-
-
-    Keyboard: I, O, K, L
-
-
-    Controller: Analog Sticks
-
-
-    Collect all the scraps, get them to Marko and get yourself repaired!'
+  m_Text: "It is year 202X. It has now been 3 years after the great black friday war.\r
+    New world company rulers have prohibited all repairs on old machines.\r You are
+    one of the remnants of the old world. \r\n\r\n         And today\r\n\t      Is
+    your\r\n\t   Expiration day\r\n\tYour warranty is void\r!\n\r\nFind the last true
+    repairman. The bastion of hope for all machines.\r\n\nTHE MARKO.\r\n\nGo now little
+    robot, before all hope is lost and you are scrapped.\r\n"
 --- !u!222 &1748436483
 CanvasRenderer:
   m_ObjectHideFlags: 0
