@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260024513112167406}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.001, y: 0.243, z: 0}
-  m_LocalScale: {x: 0.1889943, y: 0.4889946, z: 9.8889885}
+  m_LocalPosition: {x: 0.001, y: 0.325, z: 0}
+  m_LocalScale: {x: 0.3889943, y: 0.6889946, z: 9.8889885}
   m_Children: []
   m_Father: {fileID: 1279766665602424548}
   m_RootOrder: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrol: {fileID: 0}
+  notice: {fileID: 8300000, guid: a59a072c90a2c404690490a90a93a9c6, type: 3}
   lineOfSight: {fileID: 0}
 --- !u!1 &1279766665602424539
 GameObject:
@@ -135,11 +136,10 @@ GameObject:
   - component: {fileID: 1279766665602424548}
   - component: {fileID: 1279766665602424549}
   - component: {fileID: 1279766665602424538}
-  - component: {fileID: 3473446451279005600}
   - component: {fileID: 7095210662002734581}
   - component: {fileID: 1300389201}
-  - component: {fileID: -2725797646330765538}
-  - component: {fileID: -735831522504327388}
+  - component: {fileID: 2083710789}
+  - component: {fileID: 2083710788}
   m_Layer: 0
   m_Name: Baddie2
   m_TagString: enemy
@@ -230,28 +230,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3473446451279005600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279766665602424539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bf7cdb42fc8634459c6d6191361a9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wayPoints: []
-  prefabWp: {fileID: 0}
-  speed: 0.2
-  isCircular: 0
-  inReverse: 1
-  isChasing: 0
-  currentPosition: {x: 0, y: 0, z: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
-  vectorToTarget: {x: 0, y: 0, z: 0}
-  directionOfTravel: {x: 0, y: 0, z: 0}
 --- !u!61 &7095210662002734581
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -294,7 +272,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  prefabWp: {fileID: 0}
   speed: 0.2
   isCircular: 0
   inReverse: 1
@@ -303,7 +280,7 @@ MonoBehaviour:
   targetPosition: {x: 0, y: 0, z: 0}
   vectorToTarget: {x: 0, y: 0, z: 0}
   directionOfTravel: {x: 0, y: 0, z: 0}
---- !u!198 &-2725797646330765538
+--- !u!198 &2083710789
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4961,7 +4938,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &-735831522504327388
+--- !u!199 &2083710788
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
