@@ -6,6 +6,7 @@ using UnityEngine;
 public class ConeCollisionCheck : MonoBehaviour
 {
     public Patrol patrol;
+    public AudioClip notice;
 
     public LineRenderer lineOfSight;
     
@@ -13,8 +14,8 @@ public class ConeCollisionCheck : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            SFXManager.Instance.Play(notice);
             patrol = transform.parent.gameObject.GetComponent<Patrol>();
-
             patrol.Pause();
             patrol.isChasing = true;
         }

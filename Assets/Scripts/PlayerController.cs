@@ -88,9 +88,10 @@ public class PlayerController : MonoBehaviour
             Loader.Load(Loader.Scene.WinScene);
         }
         else if (col.gameObject.tag == "enemy" && !godMode){
-            StartCoroutine(TakeHit(1));
+            //StartCoroutine(TakeHit(1));
             SFXManager.Instance.Play(death);
-            StartCoroutine(DeathAfterWait(2f));
+            Loader.Load(Loader.Scene.LoseScene);
+            //StartCoroutine(DeathAfterWait(2f));
         }
     }
 
