@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameControl : MonoBehaviour
 {
     public int score = 0;
+    public int maxScore = 4;
     public Text scoreText;
     public Image oilBar;
     public OpenDoor firstDoors;
@@ -21,8 +22,8 @@ public class GameControl : MonoBehaviour
     public void IncreaseScore(int increase)
     {
         score += increase;
-        scoreText.text = "Scraps: " + score;
         if (score == firstDoorsAmount) {
+            maxScore = 11;
             camera.TriggerShake();
             StartCoroutine(OpenAfterWait(1f, firstDoors));
         }
@@ -34,6 +35,7 @@ public class GameControl : MonoBehaviour
             camera.TriggerShake();
             StartCoroutine(OpenAfterWait(1f, thirdDoors));
         }
+        scoreText.text = "Scraps:" + score + "/" + maxScore;
     }
     public void SetOilBar(float amount) {
         oilBar.fillAmount = amount / 100f;

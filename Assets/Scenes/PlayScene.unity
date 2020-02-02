@@ -3211,6 +3211,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7437520133684951633, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
 --- !u!1001 &495047632
@@ -3350,6 +3355,11 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[8]
       value: 
       objectReference: {fileID: 442845734}
+    - target: {fileID: 1260024513112167394, guid: d4758e2842ce24a90bf1aefd1c315425,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     - target: {fileID: 1279766665602424539, guid: d4758e2842ce24a90bf1aefd1c315425,
         type: 3}
       propertyPath: m_Name
@@ -4420,6 +4430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7437520133684951633, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
 --- !u!4 &768766214 stripped
@@ -5514,6 +5529,11 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[5]
       value: 
       objectReference: {fileID: 1983589821}
+    - target: {fileID: 1260024513112167394, guid: d4758e2842ce24a90bf1aefd1c315425,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     - target: {fileID: 1279766665602424539, guid: d4758e2842ce24a90bf1aefd1c315425,
         type: 3}
       propertyPath: m_Name
@@ -6274,6 +6294,11 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[5]
       value: 
       objectReference: {fileID: 2079234459}
+    - target: {fileID: 1260024513112167394, guid: d4758e2842ce24a90bf1aefd1c315425,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     - target: {fileID: 1279766665602424539, guid: d4758e2842ce24a90bf1aefd1c315425,
         type: 3}
       propertyPath: m_Name
@@ -6778,6 +6803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7437520133684951633, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
 --- !u!1001 &1147446471
@@ -42831,6 +42861,11 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[5]
       value: 
       objectReference: {fileID: 1862409834}
+    - target: {fileID: 1260024513112167394, guid: d4758e2842ce24a90bf1aefd1c315425,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     - target: {fileID: 1279766665602424539, guid: d4758e2842ce24a90bf1aefd1c315425,
         type: 3}
       propertyPath: m_Name
@@ -60138,6 +60173,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7437520133684951633, guid: f51a6f98f459c4010b8fd463be6477ac,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
 --- !u!4 &1617677405 stripped
@@ -61533,6 +61573,11 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1091680700}
+    - target: {fileID: 1260024513112167394, guid: d4758e2842ce24a90bf1aefd1c315425,
+        type: 3}
+      propertyPath: notice
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f371a6b0e3003e43862757260083791, type: 3}
     - target: {fileID: 1279766665602424539, guid: d4758e2842ce24a90bf1aefd1c315425,
         type: 3}
       propertyPath: m_Name
@@ -62690,6 +62735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786270840879226907, guid: 0d6703f42643c3d409335be596e6cf6e,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6703f42643c3d409335be596e6cf6e, type: 3}
