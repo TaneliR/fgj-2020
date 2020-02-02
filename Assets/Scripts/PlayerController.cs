@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         }
         else 
         for (var i = amount; i > 0; i--) {
-            Instantiate(scrap, transform.position + new Vector3(Random.Range(0,1),  Random.Range(0,1), 0), Quaternion.identity);
+            Instantiate(scrap, transform.position + new Vector3(Random.Range(0,0.2f),  Random.Range(0,0.2f), 0), Quaternion.identity);
         }
         yield return new WaitForSeconds(2f);
     }
