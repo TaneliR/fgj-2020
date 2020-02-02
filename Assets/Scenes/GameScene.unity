@@ -275,12 +275,12 @@ PrefabInstance:
     - target: {fileID: 4674612415471291560, guid: cc5b46483eced4aa9aceb9964eecb627,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13
+      value: 0.746
       objectReference: {fileID: 0}
     - target: {fileID: 4674612415471291560, guid: cc5b46483eced4aa9aceb9964eecb627,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23
+      value: 0.267
       objectReference: {fileID: 0}
     - target: {fileID: 4674612415471291560, guid: cc5b46483eced4aa9aceb9964eecb627,
         type: 3}
@@ -1076,7 +1076,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1521,15 +1521,6 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[8]
       value: 
       objectReference: {fileID: 1717260637}
-    - target: {fileID: 1905035093, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
-      propertyPath: prefabWp
-      value: 
-      objectReference: {fileID: 3074380994531848879, guid: 1a01ef6c477ae1348886ec3adbd5f034,
-        type: 3}
-    - target: {fileID: 1905035093, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
-      propertyPath: inReverse
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 969026000873491749, guid: f51a6f98f459c4010b8fd463be6477ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1590,11 +1581,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baddie1
       objectReference: {fileID: 0}
-    - target: {fileID: 7437520133684951633, guid: f51a6f98f459c4010b8fd463be6477ac,
-        type: 3}
-      propertyPath: notice
-      value: 
-      objectReference: {fileID: 8300000, guid: a59a072c90a2c404690490a90a93a9c6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
 --- !u!1001 &1456902688
@@ -1929,7 +1915,7 @@ PrefabInstance:
     - target: {fileID: -372088637916576190, guid: 45210737c31ef445796e479c4158af1c,
         type: 3}
       propertyPath: godMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -372088637916576190, guid: 45210737c31ef445796e479c4158af1c,
         type: 3}
@@ -7280,7 +7266,7 @@ PrefabInstance:
     - target: {fileID: 4786270840879226907, guid: 0d6703f42643c3d409335be596e6cf6e,
         type: 3}
       propertyPath: m_Volume
-      value: 0.509
+      value: 0.187
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6703f42643c3d409335be596e6cf6e, type: 3}
@@ -7536,8 +7522,13 @@ PrefabInstance:
     - target: {fileID: 5386804687106814847, guid: 440a300431016ea4faade385022d21f1,
         type: 3}
       propertyPath: score
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5386804687106814847, guid: 440a300431016ea4faade385022d21f1,
+        type: 3}
+      propertyPath: doorSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d03ccc256716eb748848dab0543bf280, type: 3}
     - target: {fileID: 8973167849758999809, guid: 440a300431016ea4faade385022d21f1,
         type: 3}
       propertyPath: m_LocalPosition.x
