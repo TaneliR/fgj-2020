@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Patrol : MonoBehaviour
 {
-	public Waypoint[] wayPoints;
+	public List<Waypoint> wayPoints = new List<Waypoint>();
+	public Waypoint prefabWp;
 	public float speed = 3f;
 
 	public bool isCircular;
@@ -14,9 +16,11 @@ public class Patrol : MonoBehaviour
 
 
 	private Waypoint currentWaypoint;
+	private ParticleSystem ps;
 	private int currentIndex = 0;
 	private bool isWaiting = false;
 	private float speedStorage = 0;
+	private bool stillChasing = false;
 	public Vector3 currentPosition;
 	public Vector3 targetPosition;
 	public Vector3 vectorToTarget;
@@ -26,10 +30,13 @@ public class Patrol : MonoBehaviour
 	
 	IEnumerator ChaseTime(float time)
 	{
+		ps.Play();
+		stillChasing = true;
 		yield return new WaitForSeconds(time);
-
-		Pause();
+		Waypoint newWp = Instantiate(prefabWp, transform.position, Quaternion.identity);
+		wayPoints.Add(newWp);
 		isChasing = false;
+		stillChasing = false;
 	}
 
 	/**
@@ -38,9 +45,11 @@ public class Patrol : MonoBehaviour
 	 */
 	void Start()
 	{
+		ps = GetComponent<ParticleSystem>();
+		ps.Stop();
 		anim = GetComponent<Animator>();
 		anim.SetBool("isMoving", true);
-		if (wayPoints.Length > 0)
+		if (wayPoints.Count > 0)
 		{
 			currentWaypoint = wayPoints[0];
 		}
@@ -56,6 +65,7 @@ public class Patrol : MonoBehaviour
 	{
 		if (currentWaypoint != null && !isWaiting && !isChasing)
 		{
+			ps.Stop();
 			MoveTowardsWaypoint();
 		}
 		else if (isChasing)
@@ -146,11 +156,11 @@ public class Patrol : MonoBehaviour
 
 			if (!inReverse)
 			{
-				currentIndex = (currentIndex + 1 >= wayPoints.Length) ? 0 : currentIndex + 1;
+				currentIndex = (currentIndex + 1 >= wayPoints.Count) ? 0 : currentIndex + 1;
 			}
 			else
 			{
-				currentIndex = (currentIndex == 0) ? wayPoints.Length - 1 : currentIndex - 1;
+				currentIndex = (currentIndex == 0) ? wayPoints.Count - 1 : currentIndex - 1;
 			}
 
 		}
@@ -158,7 +168,7 @@ public class Patrol : MonoBehaviour
 		{
 
 			// If at the start or the end then reverse
-			if ((!inReverse && currentIndex + 1 >= wayPoints.Length) || (inReverse && currentIndex == 0))
+			if ((!inReverse && currentIndex + 1 >= wayPoints.Count) || (inReverse && currentIndex == 0))
 			{
 				inReverse = !inReverse;
 			}
@@ -178,7 +188,7 @@ public class Patrol : MonoBehaviour
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * 1000f);
-		speed = 1f;
+		speed = 0.6f;
 		if (Vector3.Distance(currentPosition, targetPosition) > .1f)
 		{
 
@@ -194,6 +204,8 @@ public class Patrol : MonoBehaviour
 				Space.World
 			);
 		}
-		StartCoroutine(ChaseTime(5));
+		if (!stillChasing) {
+			StartCoroutine(ChaseTime(5f));
+		}
 	}
 }

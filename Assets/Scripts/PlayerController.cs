@@ -88,8 +88,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (col.gameObject.tag == "enemy" && !godMode){
             SFXManager.Instance.Play(death);
-            Debug.Log("Moi");
-            Loader.Load(Loader.Scene.LoseScene);
+            StartCoroutine(DeathAfterWait(2f));
         }
     }
 
@@ -97,6 +96,5 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Loader.Load(Loader.Scene.LoseScene);
-        // Code to execute after the delay
     }
 }

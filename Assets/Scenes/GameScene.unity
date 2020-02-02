@@ -1419,6 +1419,11 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[8]
       value: 
       objectReference: {fileID: 1717260637}
+    - target: {fileID: 1905035093, guid: f51a6f98f459c4010b8fd463be6477ac, type: 3}
+      propertyPath: prefabWp
+      value: 
+      objectReference: {fileID: 3074380994531848879, guid: 1a01ef6c477ae1348886ec3adbd5f034,
+        type: 3}
     - target: {fileID: 969026000873491749, guid: f51a6f98f459c4010b8fd463be6477ac,
         type: 3}
       propertyPath: m_LocalPosition.x
