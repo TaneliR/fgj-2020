@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class Patrol : MonoBehaviour
 {
 	public List<Waypoint> wayPoints = new List<Waypoint>();
-	public Waypoint prefabWp;
 	public float speed = 3f;
 
 	public bool isCircular;
@@ -30,13 +29,13 @@ public class Patrol : MonoBehaviour
 	
 	IEnumerator ChaseTime(float time)
 	{
+		anim.SetBool("isChasing", true);
 		ps.Play();
 		stillChasing = true;
 		yield return new WaitForSeconds(time);
-		Waypoint newWp = Instantiate(prefabWp, transform.position, Quaternion.identity);
-		wayPoints.Add(newWp);
 		isChasing = false;
 		stillChasing = false;
+		anim.SetBool("isChasing", false);
 	}
 
 	/**
