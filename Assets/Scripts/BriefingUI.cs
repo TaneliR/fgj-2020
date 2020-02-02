@@ -12,6 +12,6 @@ public class BriefingUI : MonoBehaviour
 
     void StartGameClick() {    
         Debug.Log("Click on start game");
-        Loader.Load(Loader.Scene.PlayScene);
+        Loader.Load(Loader.Scene.MainMenu);
     }
 }
