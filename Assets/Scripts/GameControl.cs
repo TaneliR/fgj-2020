@@ -24,28 +24,26 @@ public class GameControl : MonoBehaviour
         scoreText.text = "Scraps: " + score;
         if (score == firstDoorsAmount) {
             camera.TriggerShake();
-            PlayAfterWait(2f);
-            firstDoors.OpenDoors();
+            StartCoroutine(OpenAfterWait(1f, firstDoors));
         }
         if (score == secondDoorsAmount) {
             camera.TriggerShake();
-            PlayAfterWait(1f);
-            secondDoors.OpenDoors();
+            StartCoroutine(OpenAfterWait(1f, secondDoors));
         }
         if (score == thirdDoorsAmount) {
             camera.TriggerShake();
-            PlayAfterWait(1f);
-            thirdDoors.OpenDoors();
+            StartCoroutine(OpenAfterWait(1f, thirdDoors));
         }
     }
     public void SetOilBar(float amount) {
         oilBar.fillAmount = amount / 100f;
     }
 
-    IEnumerator PlayAfterWait(float time)
+    IEnumerator OpenAfterWait(float time, OpenDoor door)
     {
         yield return new WaitForSeconds(time);
         SFXManager.Instance.Play(doorSound);
+        door.OpenDoors();
         // Code to execute after the delay
     }
 }
